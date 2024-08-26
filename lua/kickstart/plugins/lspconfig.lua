@@ -188,6 +188,16 @@ return {
           end,
           format = false,
         },
+        --
+        stylelint_lsp = {
+          settings = {
+            stylelintplus = {
+              autoFixOnFormat = true,
+              autoFixOnSave = true,
+              validateOnSave = true,
+            },
+          },
+        },
 
         lua_ls = {
           -- cmd = {...},
