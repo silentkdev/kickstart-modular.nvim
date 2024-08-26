@@ -179,6 +179,15 @@ return {
         -- But for many setups, the LSP (`tsserver`) will work just fine
         tsserver = {},
         --
+        eslint = {
+          on_attach = function(client, bufnr)
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = bufnr,
+              command = 'EslintFixAll',
+            })
+          end,
+          format = false,
+        },
 
         lua_ls = {
           -- cmd = {...},
